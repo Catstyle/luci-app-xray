@@ -112,6 +112,8 @@ jobs:
       - name: Release and Upload Assets
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: "build-${{ github.run_number }}"
+          release_name: "Auto build ${{ github.run_number }}"
           files: "*.ipk"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
